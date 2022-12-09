@@ -18,6 +18,12 @@ const APP_ROUTES: Routes = [
     //     path: 'naoEncontrado', component: CursoNaoEncontradoComponent
     // },
     {
+        path: 'alunos', loadChildren: () => import('./alunos/alunos.module').then(hash => hash.AlunosModule)
+    },
+    {
+        path: 'cursos', loadChildren: () => import('./cursos/cursos.module').then(hash => hash.CursosModule)
+    },
+    {
         path: 'login', component: LoginComponent
     },
     {

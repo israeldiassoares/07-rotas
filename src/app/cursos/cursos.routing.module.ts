@@ -7,13 +7,13 @@ import { CursosComponent } from './cursos.component'
 
 const CURSOS_ROUTES: Routes = [
     {
-        path: 'cursos', component: CursosComponent
-    },
-    {
-        path: 'curso/:id', component: CursoDetalheComponent
+        path: '', component: CursosComponent
     },
     {
         path: 'naoEncontrado', component: CursoNaoEncontradoComponent
+    },
+    {
+        path: ':id', component: CursoDetalheComponent
     }
 ]
 
