@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
+import { CursosGuard } from './guards/cursos.guard';
+import { AuthGuard } from './guards/auth.guard'
+
+import { LoginComponent } from './login/login.component'
+import { HomeComponent } from './home/home.component'
 // import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component'
 // import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component'
 // import { CursosComponent } from './cursos/cursos.component'
-import { LoginComponent } from './login/login.component'
-import { HomeComponent } from './home/home.component'
 
 const APP_ROUTES: Routes = [
     // {
@@ -18,16 +21,17 @@ const APP_ROUTES: Routes = [
     //     path: 'naoEncontrado', component: CursoNaoEncontradoComponent
     // },
     {
-        path: 'alunos', loadChildren: () => import('./alunos/alunos.module').then(hash => hash.AlunosModule)
+        path: 'alunos', loadChildren: () => import('./alunos/alunos.module').then(hash => hash.AlunosModule), canActivate: [ AuthGuard ]
     },
     {
-        path: 'cursos', loadChildren: () => import('./cursos/cursos.module').then(hash => hash.CursosModule)
+        path: 'cursos', loadChildren: () => import('./cursos/cursos.module').then(hash => hash.CursosModule),
+        canActivate: [ AuthGuard ], canActivateChild: [CursosGuard]
     },
     {
         path: 'login', component: LoginComponent
     },
     {
-        path: '', component: HomeComponent
+        path: '', component: HomeComponent, canActivate: [ AuthGuard ]
     }
 ]
 
