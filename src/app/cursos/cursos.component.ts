@@ -22,7 +22,7 @@ export class CursosComponent implements OnInit {
 
   ngOnInit(): void {
     this.cursos = this.cursosService.getCursos()
-    console.log(this.route)
+    // console.log(this.route)
 
     this.inscricao = this.route.queryParams.subscribe((queryParams: any) => {
       this.pagina = queryParams[ 'pagina' ]

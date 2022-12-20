@@ -7,7 +7,8 @@ import { LoginComponent } from './login/login.component'
 
 import { AppRountingModule } from './app.routing.module'
 import { AuthService } from './login/auth.service'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component'
 // import { CursosModule } from './cursos/cursos.module'
 // import { AlunosModule } from './alunos/alunos.module'
 // import { AlunosComponent } from './alunos/alunos.component'
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms'
     AppComponent,
     HomeComponent,
     LoginComponent,
+    PaginaNaoEncontradaComponent,
     // AlunosComponent,
     // CursosComponent,
     // CursoDetalheComponent,

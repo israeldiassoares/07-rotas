@@ -29,6 +29,7 @@
                     class="validate"
                     [(ngModel)]="aluno.nome"
                     name="nome"
+                    (input)="onInput()"
                 >
                 <label
                     for="first_name"
@@ -55,3 +56,5 @@
     </form>
     <button (click)="salvarEdicao()">Salvar</button>
 </div>
+
+<br>

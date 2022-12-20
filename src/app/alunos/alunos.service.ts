@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core'
 
+import { Aluno } from './aluno'
+
 @Injectable({
   providedIn: 'root'
 })
 export class AlunosService {
   //Chamada para APIS
   //ENDPOINS, JSONS, OBJETOS a serem consumidos pelos componentes vai tudo aqui
-  private alunos: any[]
+  private alunos: Aluno[]
 
   constructor() {
     this.alunos = [

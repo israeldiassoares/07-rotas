@@ -10,13 +10,14 @@ export class AunosGuard implements CanActivateChild {
         state: RouterStateSnapshot
     ): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
+        console.log('AlunoGuard - Guarda de rota filha');
 
-        console.log('route', childRoute, ' state ', state)
+        // console.log('route', childRoute, ' state ', state)
         if (state.url.includes('editar')) {
-            alert("Usuário sem acesso")
-            console.log('of ', of())
+            // alert("Usuário sem acesso")
+            // console.log('of ', of())
 
-            return of(false)
+            // return of(false)
         }
         return true
     }
